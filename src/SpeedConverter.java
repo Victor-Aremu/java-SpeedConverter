@@ -1,26 +1,19 @@
-import java.util.Scanner;
-
 public class SpeedConverter{
-    public static void main(String[]args){
-    toMilesPerHour();
-        System.out.println(toMilesPerHour());
-        System.out.println(System.out);
 
-        String line;
-        Scanner in = new Scanner(System.in);
-        System.out.print("Type something: ");
-        line = in.nextLine();
-        System.out.println("You said: " + line);
-        System.out.print("Type something else: ");
-        line = in.nextLine();
-        System.out.println("You said: " + line);
+    public static long toMilesPerHour(double kilometersPerHour){
+
+        if (kilometersPerHour < 0 ){
+            return -1;
+        }
+         return Math.round(kilometersPerHour/1.609);
     }
-
-    static double toMilesPerHour(){
-        double kilometersPerHour = 98.0;
-        //System.out.println(kilometersPerHour);
-        return kilometersPerHour;
+    public static void printConversion(double kilometersPerHour){
+        if (kilometersPerHour < 0){
+            System.out.println("Invalid Value");
+            return;
+        }
+        long milesPerHour = toMilesPerHour(kilometersPerHour);
+        System.out.println(kilometersPerHour + " km/h = " + milesPerHour + " mi/h" );
     }
-
-
 }
+//Victor.Aremu
